@@ -1,0 +1,57 @@
+.goals-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.goal-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.goal-bubble {
+  height: 30px;
+  width: 30px;
+  border: 3px solid black;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.goal-bubble:hover {
+  border: 3px solid magenta;
+  box-shadow: 0 0 10px orange;
+}
+
+.goal-bubble:active {
+  border: 3px solid magenta;
+}
+
+.color0 {
+  background: linear-gradient(violet, violet, crimson);
+}
+
+.color1 {
+  background: linear-gradient(crimson, crimson, coral);
+}
+
+.color2 {
+  background: linear-gradient(coral, coral, gold);
+}
+
+.color3 {
+  background: linear-gradient(gold, gold, #32de84);
+}
+
+.color4 {
+  background: linear-gradient(#32de84, #32de84, #007FFF);
+}
+
+.color5 {
+  background: linear-gradient(#007FFF, #007FFF, #720e9e);
+}
+
+.color6 {
+  background: linear-gradient(#720e9e, #720e9e, violet);
+}
