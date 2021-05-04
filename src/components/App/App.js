@@ -64,6 +64,14 @@ class App extends Component {
     return updateCompletion;
   };
 
+  removeGoal = (progressIndex) => {
+    const goalCopy = this.state.goals;
+
+    goalCopy[this.state.date.year][this.state.date.weekNumber].progress.splice(progressIndex, 1);
+
+    this.storeGoals(goalCopy);
+  }
+
   render() {
     return (
       <main className="App">
@@ -75,6 +83,7 @@ class App extends Component {
               this.state.goals[this.state.date.year][this.state.date.weekNumber]
             }
             updateProgress={this.updateProgress}
+            removeGoal={this.removeGoal}
           />
         )}
       </main>

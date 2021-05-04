@@ -2,7 +2,7 @@ import React from "react";
 import Goal from "../Goal/Goal";
 import "./Goals.css";
 
-const Goals = ({ weekGoals, updateProgress }) => {
+const Goals = ({ weekGoals, updateProgress, removeGoal }) => {
   const { weekReward, progress } = weekGoals;
   const goals = progress.map((goal, index) => {
     return (
@@ -10,6 +10,7 @@ const Goals = ({ weekGoals, updateProgress }) => {
         name={goal.name}
         completion={goal.completion}
         updateCompletion={updateProgress(index)}
+        removeGoal={() => removeGoal(index)}
         key={`goal-${index}`}
       />
     );

@@ -1,6 +1,6 @@
 import React from "react";
 
-const Goal = ({ name, completion, updateCompletion }) => {
+const Goal = ({ name, completion, updateCompletion, removeGoal }) => {
   const spaces = completion.map((day, index) => {
     return (
       <div
@@ -15,6 +15,7 @@ const Goal = ({ name, completion, updateCompletion }) => {
     <section className="goal-column">
       <h3>{name}</h3>
       {spaces}
+      <button onClick={removeGoal}>X</button>
     </section>
   );
 };
