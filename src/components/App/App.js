@@ -8,7 +8,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      goals: [],
+      goals: initialData,
       date: DateTime.local().setZone("MST"),
     };
   }
@@ -19,13 +19,19 @@ class App extends Component {
   };
 
   checkForNewWeek = (goals) => {
-    if (!goals[this.state.date.year][this.state.date.weekNumber]) {
-      goals[this.state.date.year][this.state.date.weekNumber - 1].progress.forEach(goal => {
-        goals[this.state.date.year][this.state.date.weekNumber].progress.push({name: goal.name, completion: [false, false, false, false, false, false, false], ongoing: true})
+    const {year, weekNumber} = this.state.date;
+
+    if (!goals[year][weekNumber]) {
+      goals[year][weekNumber] = {progress: []};
+      goals[year][weekNumber - 1].progress.forEach(goal => {
+        goals[year][weekNumber].progress.push({name: goal.name, completion: [false, false, false, false, false, false, false], ongoing: true})
       })
-    } else if (!goals[this.state.date.year]) {
-      goals[this.state.date.year-1][52].progress.forEach(goal => {
-        goals[this.state.date.year][this.state.date.weekNumber].progress.push({name: goal.name, completion: [false, false, false, false, false, false, false], ongoing: true})
+      goals[year][weekNumber].weekReward = "";
+    } else if (!goals[year]) {
+      goals[year] = { 1: { progress: [] } };
+      goals[year-1][52].progress.forEach(goal => {
+        goals[year][weekNumber].progress.push({name: goal.name, completion: [false, false, false, false, false, false, false], ongoing: true})
+        goals[year][weekNumber].weekReward = "";
       })
     }
     return goals;
@@ -80,7 +86,7 @@ class App extends Component {
         {this.state.goals[this.state.date.year] && (
           <Goals
             weekGoals={
-              this.state.goals[this.state.date.year][this.state.date.weekNumber]
+              this.state.goals[this.state.date.year][this.state.date.weekNumber] || {progress: []}
             }
             updateProgress={this.updateProgress}
             removeGoal={this.removeGoal}
