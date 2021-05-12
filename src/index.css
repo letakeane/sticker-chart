@@ -1,17 +1,13 @@
 body {
   margin: 0;
-  font-family: 'Comfortaa', sans-serif;
+  font-family: "Comfortaa", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(white, white, turquoise);
+  height: 100vh;
 }
-
-@font-face {
-	font-family: 'Comfortaa';
-	src: url('fonts/Comfortaa-Light.ttf');
-}
-
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

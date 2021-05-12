@@ -19,7 +19,9 @@ const Goals = ({ weekGoals, updateProgress, removeGoal }) => {
   return (
     <>
       <section className="goals-section">{goals}</section>
-      <h4>Reward: {weekReward}</h4>
+      {weekReward &&
+        <h4>Reward: {weekReward}</h4>
+      }
     </>
   );
 };

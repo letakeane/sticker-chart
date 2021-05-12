@@ -15,7 +15,7 @@ const Goal = ({ name, completion, updateCompletion, removeGoal }) => {
     <section className="goal-column">
       <h3>{name}</h3>
       {spaces}
-      <button onClick={removeGoal}>X</button>
+      <button className="delete-button" onClick={removeGoal}>🗑</button>
     </section>
   );
 };

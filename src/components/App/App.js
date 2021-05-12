@@ -81,7 +81,7 @@ class App extends Component {
   render() {
     return (
       <main className="App">
-        <h1>⭐️StickerChart</h1>
+        <h1>⭐️ StickerChart ⭐️</h1>
         <h2>{this.state.date.toLocaleString(DateTime.DATE_HUGE)}</h2>
         {this.state.goals[this.state.date.year] && (
           <Goals

@@ -20,12 +20,13 @@
 }
 
 .goal-bubble:hover {
-  border: 3px solid magenta;
+  border: 3px solid gold;
   box-shadow: 0 0 10px orange;
 }
 
 .goal-bubble:active {
-  border: 3px solid magenta;
+  border: 3px solid gold;
+  box-shadow: 0 0 10px orange;
 }
 
 .color0 {
@@ -54,4 +55,29 @@
 
 .color6 {
   background: linear-gradient(#720e9e, #720e9e, violet);
+}
+
+.color0:hover,
+.color1:hover,
+.color2:hover,
+.color3:hover,
+.color4:hover,
+.color5:hover,
+.color6:hover {
+  border: 3px solid black;
+  box-shadow: none;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  font-size: 18px;
+  padding: 0;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
+
+.delete-button:hover {
+  border: 3px solid gold;
 }
